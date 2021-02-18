@@ -40,6 +40,13 @@ h2 {
   background-color: #c1d72e;
   color: white;
   border: 1px solid white;
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+  color: white;
 }
 
 .category {
