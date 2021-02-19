@@ -53,3 +53,53 @@ h2 {
   margin-top: 40px;
   font-size: 30px;
 }
+
+.word {
+  text-align: center;
+  padding: 0 0 0 0;
+}
+
+li {
+  display: inline;
+  margin: 0 10 0 10;
+  font-size: 50px;
+}
+
+.clue,
+.lives {
+  margin-top: 25px;
+}
+
+.canvas {
+  margin-top: 55px;
+  display: block;
+  margin: auto;
+  border: 2px dashed white;
+}
+
+.gamebuttons {
+  margin-top: 40px;
+  text-align: center;
+}
+
+button {
+  height: 50px;
+  width: 110px;
+  background-color: #c1d72e;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 20px;
+}
+button:nth-child(1) {
+  margin-left: 0px;
+}
+
+button:hover {
+  background-color: white;
+  color: #c1d72e;
+  transition: 20ms;
+}
