@@ -1,6 +1,5 @@
 body {
   background-color: #c1d72e;
-  /* font-family: "Montserrat", sans-serif; */
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
     Helvetica, Arial, "Lucida Grande", sans-serif;
   color: white;
@@ -51,10 +50,12 @@ h2 {
 
 .category {
   margin-top: 40px;
+  margin-bottom: 0;
   font-size: 30px;
 }
 
 .word {
+  margin: 0 0 0 0;
   text-align: center;
   padding: 0 0 0 0;
 }
@@ -90,8 +91,8 @@ button {
   border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 400;
   margin-left: 20px;
 }
 button:nth-child(1) {

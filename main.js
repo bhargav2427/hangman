@@ -1,5 +1,13 @@
+import { category, word, hint } from "./questionHint.js";
+
+var lives = 10;
+//lives
+document.getElementById("lives").innerHTML = "You have " + lives + " lives.";
+//Categories
+document.getElementById("category").innerHTML =
+  "Choosen Category is " + category;
+//Buttons a-z
 var i = 97;
-var buttons = document.getElementById("buttons");
 while (i < 123) {
   var node = document.createElement("div");
   node.id = String.fromCharCode(i);
@@ -12,27 +20,28 @@ while (i < 123) {
   i++;
 }
 
+//onclick function for characters
 function clicked(x) {
   console.log(x.id);
   document.getElementById(x.id).classList.add("disabled");
+}
+
+//creation of word
+var ul = document.getElementById("word");
+var j = 0;
+while (word[j] != undefined) {
+  var node = document.createElement("li");
+  var textNode = document.createTextNode("_");
+  node.appendChild(textNode);
+  document.getElementById("word").appendChild(node);
+  j++;
 }
 
 // Drawing hangman
 var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
 ctx.strokeStyle = "#FFFFFF";
-//calling function for trails
-step1();
-step2();
-step7();
-step3();
-step4();
-step5();
-step6();
-step8();
-step9();
-step10();
-
+ctx.lineWidth = 2;
 //1st step of drawing
 function step1() {
   ctx.moveTo(20, 160);
@@ -94,4 +103,11 @@ function step10() {
   ctx.moveTo(80, 90);
   ctx.lineTo(110, 110);
   ctx.stroke();
+}
+
+//add eventlistner to hint
+document.getElementById("hint").addEventListener("click", getHint);
+
+function getHint() {
+  document.getElementById("clue").innerHTML = "Hint: " + hint;
 }
