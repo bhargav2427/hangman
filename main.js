@@ -3,9 +3,11 @@ import { category, word, hint } from "./questionHint.js";
 var lives = 10;
 //lives
 document.getElementById("lives").innerHTML = "You have " + lives + " lives.";
+
 //Categories
 document.getElementById("category").innerHTML =
   "Choosen Category is " + category;
+
 //Buttons a-z
 var i = 97;
 while (i < 123) {
@@ -22,8 +24,19 @@ while (i < 123) {
 
 //onclick function for characters
 function clicked(x) {
+  k = 0;
   console.log(x.id);
   document.getElementById(x.id).classList.add("disabled");
+  if (!word.includes(x.id)) {
+    lives--;
+    eval("step" + (10 - lives) + "()");
+    if (lives == 0) {
+      document.getElementById("lives").innerHTML = "Game Over. Play Again";
+    } else {
+      document.getElementById("lives").innerHTML =
+        "You have " + lives + " lives.";
+    }
+  }
 }
 
 //creation of word
