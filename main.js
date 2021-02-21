@@ -25,16 +25,41 @@ while (i < 123) {
 //onclick function for characters
 function clicked(x) {
   k = 0;
-  console.log(x.id);
   document.getElementById(x.id).classList.add("disabled");
+  // if character not found
   if (!word.includes(x.id)) {
     lives--;
     eval("step" + (10 - lives) + "()");
     if (lives == 0) {
       document.getElementById("lives").innerHTML = "Game Over. Play Again";
+      completed();
     } else {
       document.getElementById("lives").innerHTML =
         "You have " + lives + " lives.";
+    }
+  }
+  // if character found
+  else {
+    var li = document.getElementsByTagName("li");
+    console.log(li);
+    var l = 0;
+    while (word[l] != undefined) {
+      if (word[l] == x.id) {
+        li[l].innerHTML = x.id;
+      }
+      l++;
+    }
+    // console.log(Object.values(li));
+    var m = 0;
+    var li_values = Object.values(li);
+    var str = "";
+    while (li_values[m] != undefined) {
+      str += li_values[m].innerHTML;
+      m++;
+    }
+    if (word == str) {
+      document.getElementById("lives").innerHTML = "You Won";
+      completed();
     }
   }
 }
@@ -123,4 +148,13 @@ document.getElementById("hint").addEventListener("click", getHint);
 
 function getHint() {
   document.getElementById("clue").innerHTML = "Hint: " + hint;
+}
+
+function completed() {
+  var newwindow = confirm("Play Again");
+  if (newwindow) {
+    window.location.reload();
+  } else {
+    var newwindow = confirm("Play Again");
+  }
 }
