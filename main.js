@@ -24,7 +24,7 @@ while (i < 123) {
 
 //onclick function for characters
 function clicked(x) {
-  k = 0;
+  var k = 0;
   document.getElementById(x.id).classList.add("disabled");
   // if character not found
   if (!word.includes(x.id)) {
