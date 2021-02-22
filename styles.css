@@ -104,3 +104,13 @@ button:hover {
   color: #c1d72e;
   transition: 20ms;
 }
+
+@media screen and (max-width: 768px) {
+  .buttons {
+    margin-top: 40px;
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+}
